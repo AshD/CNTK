@@ -6,11 +6,10 @@
 
 import unittest
 try:
-    import unittest.mock as mock
+    from unittest.mock import patch
 except ImportError:
     # Note: separate install on Py 2.x (pip install mock)
-    import mock
-from unittest.mock import patch
+    from mock import patch
 
 import cntk.contrib.deeprl.tests.spaces as spaces
 import numpy as np
