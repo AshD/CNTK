@@ -5,7 +5,13 @@
 # ==============================================================================
 
 import unittest
-from unittest.mock import MagicMock, Mock, patch
+try:
+    import unittest.mock as mock
+except ImportError:
+    # Note: separate install on Py 2.x (pip install mock)
+    import mock
+from mock import MagicMock, Mock, patch
+
 
 import cntk.contrib.deeprl.tests.spaces as spaces
 import numpy as np
